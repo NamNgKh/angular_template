@@ -1,0 +1,18 @@
+<ng-container [ngTemplateOutlet]="template"></ng-container>
+
+<ng-template #default>
+  <div class="input-group" style="width: 200px">
+    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
+    <button class="input-group-addon" (click)="d.toggle()" type="button">
+      <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #template_1>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</ng-template>
